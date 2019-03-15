@@ -9,28 +9,35 @@ public class PlayerPowers : MonoBehaviour {
 
     PlayerStats ps;
 
+    public bool powerChanging;
+    public float powerChangeTime=1f;
+
     UnityEngine.UI.Text powerDisplay;
 
 	// Use this for initialization
 	void Start () {
-        powers =new string[] { "none","defense","speed","attack"};
+        powers =new string[] { "defense","speed","attack"};
         currentPower = 0;
         ps = gameObject.GetComponent<PlayerStats>();
         powerDisplay = GameObject.FindWithTag("PowerDisplay").GetComponent< UnityEngine.UI.Text>();
         powerDisplay.enabled = false;
+        powerChanging = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (!powerChanging)
         {
-            changePower(currentPower - 1);
-        }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                changePower(currentPower - 1);
+            }
 
-        //back movement
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            changePower(currentPower + 1);
+            //back movement
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                changePower(currentPower + 1);
+            }
         }
     }
 
@@ -57,13 +64,22 @@ public class PlayerPowers : MonoBehaviour {
         switch (currentPower)
         {
             case 0:
-                ps.setSpeed(0.2f);
-                ps.setDefense(false);
+                ps.setSpeed(0.1f);
+                ps.setDefense(true);
+                ps.setMaxJumps(1);
+                ps.setAttack(false);
                 break;
             case 1:
-                ps.setDefense(true);
+                ps.setSpeed(2f);
+                ps.setDefense(false);
+                ps.setMaxJumps(2);
+                ps.setAttack(false);
                 break;
             case 2:
+                ps.setSpeed(0.1f);
+                ps.setDefense(false);
+                ps.setMaxJumps(1);
+                ps.setAttack(true);
                 break;
         }
         powerDisplay.text = "Power: " + powers[currentPower];
@@ -73,6 +89,9 @@ public class PlayerPowers : MonoBehaviour {
     IEnumerator fadeDisplay()
     {
         powerDisplay.enabled = true;
+        powerChanging = true;
+        yield return new WaitForSeconds(1f);
+        powerChanging = false;
         powerDisplay.color = new Color(powerDisplay.color.r, powerDisplay.color.g, powerDisplay.color.b, 1);
         yield return new WaitForSeconds(3f);
         while (powerDisplay.color.a > 0)

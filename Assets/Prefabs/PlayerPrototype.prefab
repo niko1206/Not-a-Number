@@ -37,11 +37,13 @@ GameObject:
   - component: {fileID: 33604039942300558}
   - component: {fileID: 65942268194940822}
   - component: {fileID: 23264859312813836}
-  - component: {fileID: 114081340524973304}
   - component: {fileID: 114024515306044700}
+  - component: {fileID: 54475125901449942}
+  - component: {fileID: 114305283375410156}
+  - component: {fileID: 114106190359705972}
   m_Layer: 0
   m_Name: PlayerPrototype
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,8 +54,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1892300780414154}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28, y: 1.5, z: -1.01}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.28, y: 191.7, z: -4.27}
   m_LocalScale: {x: 1.4124284, y: 3.0790586, z: 1.5196844}
   m_Children:
   - {fileID: 4678157921379740}
@@ -114,6 +116,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1892300780414154}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54475125901449942
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892300780414154}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65942268194940822
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -137,7 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fc33d86c95dd24898f2bcf28c0b2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114081340524973304
+  jumpForce: 100
+--- !u!114 &114106190359705972
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -145,8 +163,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1892300780414154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a4ae045359eae84494eda9b87dab44e, type: 3}
+  m_Script: {fileID: 11500000, guid: a293948dba0fd904eb2cc7f62fad6dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookAt: {fileID: 0}
-  camTransform: {fileID: 0}
+  powerChanging: 0
+  powerChangeTime: 1
+--- !u!114 &114305283375410156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892300780414154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de6b2b70d944145af2a1c0ef5509d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
