@@ -21,6 +21,7 @@ public class ThirdPersonCamera : MonoBehaviour {
 	// Use this for initialization
 	private void Start () {
         camTransform = transform;
+        lookAt = GameObject.Find("CamLookAtPos").transform;
         cam = Camera.main;
 	}
 

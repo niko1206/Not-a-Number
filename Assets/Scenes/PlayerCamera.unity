@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,34 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &387813775
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 387813776}
-  m_Layer: 0
-  m_Name: CamLookAtPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &387813776
+--- !u!4 &387813776 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 387813775}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.16, y: 0.368, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2079903997}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_PrefabParentObject: {fileID: 4678157921379740, guid: 951f98ec2f9dc514ab05bac2c33b5102,
+    type: 2}
+  m_PrefabInternal: {fileID: 1315801978}
 --- !u!1 &641212865
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,11 +401,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 23264859312813836, guid: 951f98ec2f9dc514ab05bac2c33b5102,
+    - target: {fileID: 114081340524973304, guid: 951f98ec2f9dc514ab05bac2c33b5102,
         type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3a64fefcf0672014eae2a92a8b6ffae2, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 951f98ec2f9dc514ab05bac2c33b5102, type: 2}
   m_IsPrefabParent: 0
@@ -474,8 +451,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb8f07fcb9d20294e83de4342d81c838, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &2079903997 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4061725645278108, guid: 951f98ec2f9dc514ab05bac2c33b5102,
-    type: 2}
-  m_PrefabInternal: {fileID: 1315801978}
